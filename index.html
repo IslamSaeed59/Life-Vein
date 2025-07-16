@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Vein | تبرع بالدم - أنقذ حياة</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --main-pink: #bf1e07;
+        --dark-accent: #72130c;
+        --text-dark: #333;
+        --text-light: #fff;
+        --section-bg: #c9c9c9;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        transition: all 0.3s;
+      }
+
+      /* شريط اللغات */
+      .language-bar {
+        background: var(--text-dark);
+        padding: 10px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .language-btn {
+        background: transparent;
+        color: white;
+        border: none;
+        margin: 5px 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 15px;
+        border-radius: 20px;
+      }
+
+      .language-btn:hover,
+      .language-btn.active {
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--main-pink);
+      }
+
+      .language-btn i {
+        margin-left: 5px;
+        font-size: 1.2rem;
+      }
+
+      /* القسم الرئيسي */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+            center/cover no-repeat;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--text-light);
+        position: relative;
+      }
+
+      .hero-content {
+        z-index: 2;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .hero-title {
+        font-size: 5rem;
+        margin: 0;
+        background: linear-gradient(
+          to right,
+          var(--main-pink),
+          var(--dark-accent)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.5s;
+      }
+
+      .hero-subtitle {
+        font-size: 2rem;
+        margin-top: 20px;
+        opacity: 0;
+        animation: slideUp 1.5s ease-out 1s forwards;
+      }
+
+      /* مقدمة الحملة */
+      .campaign-intro {
+        padding: 80px 20px;
+        background-color: var(--main-pink);
+        color: white;
+        text-align: center;
+      }
+
+      .intro-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .slogan {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: white;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .symbols {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 40px 0;
+        flex-wrap: wrap;
+      }
+
+      .symbol {
+        font-size: 2.5rem;
+        background: white;
+        color: var(--main-pink);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* فوائد التبرع */
+      .benefits-section {
+        padding: 80px 20px;
+        background-color: var(--section-bg);
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .benefit-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .benefit-icon {
+        font-size: 3rem;
+        color: var(--main-pink);
+        margin-bottom: 20px;
+      }
+
+      /* قسم الفئات المستهدفة */
+      .target-section {
+        padding: 80px 20px;
+        background-color: var(--section-bg);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        color: var(--main-pink);
+        margin-bottom: 50px;
+        font-size: 2.5rem;
+      }
+
+      .target-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .target-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 350px;
+        transition: transform 0.3s;
+      }
+
+      .target-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .target-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-title {
+        color: var(--dark-accent);
+        margin-top: 0;
+      }
+
+      .requirements {
+        margin: 20px 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .requirements li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .requirements li:before {
+        content: "✓";
+        color: var(--main-pink);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+
+      .show-images-btn {
+        background: var(--main-pink);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s;
+        display: block;
+        margin: 20px auto 0;
+      }
+
+      .show-images-btn:hover {
+        background: var(--dark-accent);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .donors-gallery,
+      .receivers-gallery {
+        display: none;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+        animation: fadeIn 1s;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+      }
+
+      .gallery-img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .gallery-img:hover {
+        transform: scale(1.05);
+      }
+
+      /* قسم الفيديو */
+      .video-section {
+        padding: 80px 20px;
+        text-align: center;
+        background: white;
+      }
+
+      .video-container {
+        max-width: 800px;
+        margin: 40px auto 0;
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* قسم المشاهير */
+      .celebrities-section {
+        padding: 80px 20px;
+        background-color: var(--section-bg);
+      }
+
+      .celebrities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .celebrity-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .celebrity-card:hover {
+        transform: scale(1.05);
+      }
+
+      .celebrity-card img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      .celebrity-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* كيفية التبرع */
+      .how-to-section {
+        padding: 80px 20px;
+        background: white;
+      }
+
+      .steps-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .step-card {
+        text-align: center;
+        padding: 30px 20px;
+        background: var(--section-bg);
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
+
+      .step-card:hover {
+        background: var(--main-pink);
+        color: white;
+      }
+
+      .step-card:hover .step-icon {
+        color: white;
+      }
+
+      .step-icon {
+        font-size: 2.5rem;
+        color: var(--main-pink);
+        margin-bottom: 20px;
+      }
+
+      .step-number {
+        background: var(--main-pink);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-weight: bold;
+      }
+
+      /* أماكن التبرع */
+      .locations-section {
+        padding: 80px 20px;
+        background-color: var(--section-bg);
+      }
+
+      .locations-map {
+        height: 500px;
+        background: #ddd;
+        margin-top: 50px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .map-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* قسم التحفيز */
+      .motivation-section {
+        padding: 80px 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+            center/cover no-repeat;
+        color: white;
+        text-align: center;
+      }
+
+      .motivation-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .motivation-card {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--text-dark);
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 300px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+
+      .motivation-card:hover {
+        transform: scale(1.05);
+      }
+
+      .points-system {
+        background: white;
+        color: var(--text-dark);
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 600px;
+        margin: 50px auto 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .point-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .point-icon {
+        color: var(--main-pink);
+        font-size: 1.5rem;
+        margin-left: 15px;
+      }
+
+      /* قسم الشكر والتحفيز المبتكر */
+      .thanks-section {
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #bf1e07, #72130c);
+        color: white;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .split-section {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 400px;
+      }
+
+      .clock-section,
+      .thank-message {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        position: relative;
+      }
+
+      /* تصميم الساعة */
+      .clock {
+        width: 200px;
+        height: 200px;
+        border: 8px solid white;
+        border-radius: 50%;
+        position: relative;
+        margin-bottom: 30px;
+        animation: pulse 2s infinite alternate;
+      }
+
+      .clock-face {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .hand {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: white;
+        transform-origin: left center;
+        border-radius: 5px;
+      }
+
+      .hour-hand {
+        width: 60px;
+        height: 6px;
+        animation: rotate 12s linear infinite;
+      }
+
+      .minute-hand {
+        width: 80px;
+        height: 4px;
+        animation: rotate 6s linear infinite;
+      }
+
+      .clock-text {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeIn 2s forwards 1s;
+      }
+
+      /* قسم الشكر */
+      .thank-message {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+      }
+
+      .thank-title {
+        font-size: 5rem;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .thank-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: white;
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: expand 1.5s forwards 0.5s;
+      }
+
+      .typing-text {
+        font-size: 2rem;
+        border-right: 3px solid white;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3s steps(40) 1s forwards,
+          blink-caret 0.75s step-end infinite;
+        width: 0;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes expand {
+        100% {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes typing {
+        100% {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: white;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 3rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.5rem;
+        }
+
+        .target-card {
+          width: 100%;
+        }
+
+        .language-btn {
+          font-size: 0.9rem;
+          padding: 3px 10px;
+          margin: 3px 5px;
+        }
+
+        .slogan {
+          font-size: 1.8rem;
+        }
+
+        .split-section {
+          flex-direction: column;
+        }
+
+        .thank-message {
+          clip-path: none;
+        }
+
+        .thank-title {
+          font-size: 3rem;
+        }
+
+        .typing-text {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- شريط اللغات -->
+    <div class="language-bar">
+      <button class="language-btn active" onclick="changeLanguage('ar')">
+        <i class="fas fa-flag"></i> العربية
+      </button>
+      <button class="language-btn" onclick="changeLanguage('en')">
+        <i class="fas fa-flag-usa"></i> English
+      </button>
+      <button class="language-btn" onclick="changeLanguage('fr')">
+        <i class="fas fa-flag"></i> Français
+      </button>
+      <button class="language-btn" onclick="changeLanguage('es')">
+        <i class="fas fa-flag"></i> Español
+      </button>
+      <button class="language-btn" onclick="changeLanguage('de')">
+        <i class="fas fa-flag"></i> Deutsch
+      </button>
+      <button class="language-btn" onclick="changeLanguage('zh')">
+        <i class="fas fa-flag"></i> 中文
+      </button>
+    </div>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title" data-translate="title">Life Vein</h1>
+        <p class="hero-subtitle" data-translate="subtitle">
+          Be Strong and Save Others
+        </p>
+        <button class="show-images-btn" data-translate="donateBtn">
+          تبرع الآن
+        </button>
+      </div>
+    </section>
+
+    <!-- مقدمة الحملة -->
+    <section class="campaign-intro">
+      <div class="intro-content">
+        <h2 class="slogan" data-translate="slogan">كُن بطلاً وأنقذ إنساناً</h2>
+        <p data-translate="introText">
+          حملة "Life Vein" هي مبادرة إنسانية تهدف إلى تشجيع التبرع بالدم لإنقاذ
+          حياة المحتاجين. كل قطرة دم يمكن أن تكون سبباً في إنقاذ حياة إنسان.
+          انضم إلينا في هذه المهمة الإنسانية وساهم في صنع الفرق.
+        </p>
+
+        <div class="symbols">
+          <div class="symbol"><i class="fas fa-heartbeat"></i></div>
+          <div class="symbol"><i class="fas fa-hand-holding-heart"></i></div>
+          <div class="symbol"><i class="fas fa-heart"></i></div>
+          <div class="symbol"><i class="fas fa-medal"></i></div>
+          <div class="symbol"><i class="fas fa-handshake"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- فوائد الحملة -->
+    <section class="benefits-section">
+      <div class="container">
+        <h2 class="section-title" data-translate="benefitsTitle">
+          فوائد المشاركة في الحملة
+        </h2>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+            <h3 data-translate="benefit1">إنقاذ الأرواح</h3>
+            <p data-translate="benefit1Text">
+              كل تبرع بالدم يمكن أن ينقذ حياة 3 أشخاص على الأقل
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-user-md"></i></div>
+            <h3 data-translate="benefit2">فحص صحي مجاني</h3>
+            <p data-translate="benefit2Text">
+              تحصل على فحص مجاني لضغط الدم، الهيموجلوبين، وغيرها
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-smile"></i></div>
+            <h3 data-translate="benefit3">السعادة النفسية</h3>
+            <p data-translate="benefit3Text">
+              المساعدة في إنقاذ حياة الآخرين تمنحك شعوراً لا يقدر بثمن
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الفئات المستهدفة -->
+    <section class="target-section">
+      <div class="container">
+        <h2 class="section-title" data-translate="targetTitle">
+          الفئات المستهدفة
+        </h2>
+
+        <div class="target-group">
+          <!-- الفئة الأولى: المتبرعون -->
+          <div class="target-card">
+            <img
+              src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="متبرعون بالدم"
+            />
+            <div class="card-content">
+              <h3 class="card-title" data-translate="donorsTitle">
+                المتبرعون بالدم
+              </h3>
+              <ul class="requirements">
+                <li data-translate="req1">أن تكون بصحة جيدة</li>
+                <li data-translate="req2">العمر بين 18 إلى 38 سنة</li>
+                <li data-translate="req3">الوزن لا يقل عن 50 كجم</li>
+                <li data-translate="req4">عدم وجود أمراض معدية</li>
+                <li data-translate="req5">عدم تناول أدوية مؤثرة</li>
+              </ul>
+              <button
+                class="show-images-btn"
+                onclick="toggleGallery('donors')"
+                data-translate="showDonors"
+              >
+                عرض المتبرعين
+              </button>
+            </div>
+
+            <div class="donors-gallery" id="donors-gallery">
+              <img
+                src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="gallery-img"
+                alt="متبرع 1"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1551601651-bc60f254d532?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="gallery-img"
+                alt="متبرع 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="gallery-img"
+                alt="متبرع 3"
+              />
+            </div>
+          </div>
+
+          <!-- الفئة الثانية: المستفيدون -->
+          <div class="target-card">
+            <img
+              src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="محتاجون للدم"
+            />
+            <div class="card-content">
+              <h3 class="card-title" data-translate="receiversTitle">
+                المحتاجون للدم
+              </h3>
+              <ul class="requirements">
+                <li data-translate="need1">مرضى فقر الدم المزمن</li>
+                <li data-translate="need2">ضحايا الحوادث والجراحات</li>
+                <li data-translate="need3">مرضى السرطان</li>
+                <li data-translate="need4">سكان مناطق الحروب</li>
+                <li data-translate="need5">ضحايا الكوارث الطبيعية</li>
+              </ul>
+              <button
+                class="show-images-btn"
+                onclick="toggleGallery('receivers')"
+                data-translate="showReceivers"
+              >
+                عرض المحتاجين
+              </button>
+            </div>
+
+            <div class="receivers-gallery" id="receivers-gallery">
+              <img
+                src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="gallery-img"
+                alt="محتاج 1"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1505751172876-fa1923c0c2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="gallery-img"
+                alt="محتاج 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="gallery-img"
+                alt="محتاج 3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الفيديو -->
+    <section class="video-section">
+      <div class="container">
+        <h2 class="section-title" data-translate="videoTitle">
+          كيفية التبرع بالدم
+        </h2>
+        <p data-translate="videoDesc">
+          شاهد هذا الفيديو التوضيحي لتعرف كيف يمكنك التبرع بالدم بسهولة وأمان
+        </p>
+        <div class="video-container">
+          <iframe
+            width="928"
+            height="522"
+            src="https://www.youtube.com/embed/eusCtK0qjFE"
+            title="أهمية  التبرع بالدم"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المشاهير -->
+    <section class="celebrities-section">
+      <div class="container">
+        <h2 class="section-title" data-translate="celebsTitle">
+          نجوم يشاركون في التبرع بالدم
+        </h2>
+        <p data-translate="celebsDesc">
+          انضم إلى هؤلاء النجوم وساهم في إنقاذ الأرواح
+        </p>
+
+        <div class="celebrities-grid">
+          <div class="celebrity-card">
+            <img
+              src="https://media.gemini.media/img/yallakora/Players//Players/p11874825-8-2024-23-5-21.png"
+              alt="نجم 1"
+            />
+            <div class="celebrity-info">
+              <h3 data-translate="celeb1">محمد صلاح</h3>
+              <p data-translate="celeb1Desc">"التبرع بالدم واجب إنساني"</p>
+            </div>
+          </div>
+
+          <div class="celebrity-card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi72eO2tSYr6C1-gAgGcNdZIt43clkbFyOjg&s"
+              alt="نجمة 2"
+            />
+            <div class="celebrity-info">
+              <h3 data-translate="celeb2">ياسمين صبري</h3>
+              <p data-translate="celeb2Desc">
+                "أتبرع بالدم بانتظام منذ 5 سنوات"
+              </p>
+            </div>
+          </div>
+
+          <div class="celebrity-card">
+            <img
+              src="https://www.assawsana.com/portal/image/imgid441023.jpg?small"
+              alt="نجم 3"
+            />
+            <div class="celebrity-info">
+              <h3 data-translate="celeb3">أحمد حلمي</h3>
+              <p data-translate="celeb3Desc">"كلنا مسؤولون عن بعضنا"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- كيفية التبرع -->
+    <section class="how-to-section">
+      <div class="container">
+        <h2 class="section-title" data-translate="howToTitle">
+          كيفية التبرع بالدم
+        </h2>
+        <p data-translate="howToDesc">خطوات بسيطة لتصبح بطلاً وتنقذ حياة</p>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-icon"><i class="fas fa-search-location"></i></div>
+            <h3 data-translate="step1">ابحث عن أقرب مركز</h3>
+            <p data-translate="step1Desc">
+              استخدم خريطة المراكز للعثور على أقرب مكان
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+            <h3 data-translate="step2">حدد موعداً</h3>
+            <p data-translate="step2Desc">
+              يمكنك الحجز مسبقاً أو التوجه مباشرة
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-icon"><i class="fas fa-file-medical"></i></div>
+            <h3 data-translate="step3">الفحص الطبي</h3>
+            <p data-translate="step3Desc">سيتم فحصك للتأكد من أهليتك للتبرع</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-icon"><i class="fas fa-heartbeat"></i></div>
+            <h3 data-translate="step4">التبرع بالدم</h3>
+            <p data-translate="step4Desc">
+              عملية التبرع تستغرق 10-15 دقيقة فقط
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-icon"><i class="fas fa-coffee"></i></div>
+            <h3 data-translate="step5">الراحة والتغذية</h3>
+            <p data-translate="step5Desc">احصل على قسط من الراحة ووجبة خفيفة</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- أماكن التبرع -->
+    <section class="locations-section">
+      <div class="container">
+        <h2 class="section-title" data-translate="locationsTitle">
+          أماكن التبرع بالدم
+        </h2>
+        <p data-translate="locationsDesc">
+          ابحث عن أقرب مركز تبرع بالدم في مدينتك
+        </p>
+
+        <div class="locations-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.0170850513234!2d31.24453367569768!3d30.05884321821788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa97c9e0c0d%3A0x4d408c50fa95f840!2z2YXYr9mK2YbYp9iq2Yog2KfZhNiv2YjYsdmK2Kkg2KfZhNis2KfYqNmK2KfYjCDZhdin2K3Yt9in2LHYp9iqINmF2K3Yp9mB2YrYqQ!5e0!3m2!1sar!2seg!4v1721126068024!5m2!1sar!2seg"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم التحفيز -->
+    <section class="motivation-section">
+      <div class="container">
+        <h2
+          class="section-title"
+          style="color: white"
+          data-translate="motivationTitle"
+        >
+          لماذا يجب أن أتبرع بالدم؟
+        </h2>
+
+        <div class="motivation-cards">
+          <div class="motivation-card">
+            <h3 data-translate="motivation1">كل ثانيتين...</h3>
+            <p data-translate="motivation1Text">
+              هناك شخص في مكان ما يحتاج إلى نقل دم
+            </p>
+          </div>
+
+          <div class="motivation-card">
+            <h3 data-translate="motivation2">تبرع واحد...</h3>
+            <p data-translate="motivation2Text">يمكن أن ينقذ حياة 3 أشخاص</p>
+          </div>
+
+          <div class="motivation-card">
+            <h3 data-translate="motivation3">لا يوجد بديل...</h3>
+            <p data-translate="motivation3Text">
+              لا يوجد بديل صناعي للدم البشري
+            </p>
+          </div>
+        </div>
+
+        <div class="points-system">
+          <h3 data-translate="pointsTitle">نظام النقاط العالمي</h3>
+          <p data-translate="pointsDesc">
+            كل تبرع بالدم يسجل كنقطة في سجل المنظمة العالمية للصحة:
+          </p>
+
+          <div class="point-item">
+            <i class="fas fa-tint point-icon"></i>
+            <span data-translate="point1">كل تبرع = 1 نقطة تنقذ حياة</span>
+          </div>
+
+          <div class="point-item">
+            <i class="fas fa-globe-africa point-icon"></i>
+            <span data-translate="point2"
+              >النقاط تصل للمناطق المحتاجة حول العالم</span
+            >
+          </div>
+
+          <div class="point-item">
+            <i class="fas fa-award point-icon"></i>
+            <span data-translate="point3"
+              >المتبرعون الدائمون يحصلون على شهادات تقدير</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الشكر والتحفيز المبتكر -->
+    <section class="thanks-section">
+      <div class="container">
+        <div class="split-section">
+          <!-- النصف الأول - الساعة الرمزية -->
+          <div class="clock-section">
+            <div class="clock">
+              <div class="clock-face">
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+              </div>
+            </div>
+            <p class="clock-text">ساعة من وقتك = حياة لإنسان</p>
+          </div>
+
+          <!-- النصف الثاني - رسالة الشكر -->
+          <div class="thank-message">
+            <h2 class="thank-title">شكرًا</h2>
+            <div class="message-container">
+              <p class="typing-text">من قلب كل محتاج للتبرع...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // بيانات الترجمة
+      const translations = {
+        ar: {
+          title: "Life Vein",
+          subtitle: "كن قوياً وأنقذ الآخرين",
+          donateBtn: "تبرع الآن",
+          slogan: "كُن بطلاً وأنقذ إنساناً",
+          introText:
+            "حملة 'Life Vein' هي مبادرة إنسانية تهدف إلى تشجيع التبرع بالدم لإنقاذ حياة المحتاجين. كل قطرة دم يمكن أن تكون سبباً في إنقاذ حياة إنسان. انضم إلينا في هذه المهمة الإنسانية وساهم في صنع الفرق.",
+          benefitsTitle: "فوائد المشاركة في الحملة",
+          benefit1: "إنقاذ الأرواح",
+          benefit1Text: "كل تبرع بالدم يمكن أن ينقذ حياة 3 أشخاص على الأقل",
+          benefit2: "فحص صحي مجاني",
+          benefit2Text: "تحصل على فحص مجاني لضغط الدم، الهيموجلوبين، وغيرها",
+          benefit3: "السعادة النفسية",
+          benefit3Text:
+            "المساعدة في إنقاذ حياة الآخرين تمنحك شعوراً لا يقدر بثمن",
+          targetTitle: "الفئات المستهدفة",
+          donorsTitle: "المتبرعون بالدم",
+          receiversTitle: "المحتاجون للدم",
+          req1: "أن تكون بصحة جيدة",
+          req2: "العمر بين 18 إلى 38 سنة",
+          req3: "الوزن لا يقل عن 50 كجم",
+          req4: "عدم وجود أمراض معدية",
+          req5: "عدم تناول أدوية مؤثرة",
+          need1: "مرضى فقر الدم المزمن",
+          need2: "ضحايا الحوادث والجراحات",
+          need3: "مرضى السرطان",
+          need4: "سكان مناطق الحروب",
+          need5: "ضحايا الكوارث الطبيعية",
+          showDonors: "عرض المتبرعين",
+          showReceivers: "عرض المحتاجين",
+          videoTitle: "كيفية التبرع بالدم",
+          videoDesc:
+            "شاهد هذا الفيديو التوضيحي لتعرف كيف يمكنك التبرع بالدم بسهولة وأمان",
+          celebsTitle: "نجوم يشاركون في التبرع بالدم",
+          celebsDesc: "انضم إلى هؤلاء النجوم وساهم في إنقاذ الأرواح",
+          celeb1: "محمد صلاح",
+          celeb1Desc: '"التبرع بالدم واجب إنساني"',
+          celeb2: "ياسمين صبري",
+          celeb2Desc: '"أتبرع بالدم بانتظام منذ 5 سنوات"',
+          celeb3: "أحمد حلمي",
+          celeb3Desc: '"كلنا مسؤولون عن بعضنا"',
+          howToTitle: "كيفية التبرع بالدم",
+          howToDesc: "خطوات بسيطة لتصبح بطلاً وتنقذ حياة",
+          step1: "ابحث عن أقرب مركز",
+          step1Desc: "استخدم خريطة المراكز للعثور على أقرب مكان",
+          step2: "حدد موعداً",
+          step2Desc: "يمكنك الحجز مسبقاً أو التوجه مباشرة",
+          step3: "الفحص الطبي",
+          step3Desc: "سيتم فحصك للتأكد من أهليتك للتبرع",
+          step4: "التبرع بالدم",
+          step4Desc: "عملية التبرع تستغرق 10-15 دقيقة فقط",
+          step5: "الراحة والتغذية",
+          step5Desc: "احصل على قسط من الراحة ووجبة خفيفة",
+          locationsTitle: "أماكن التبرع بالدم",
+          locationsDesc: "ابحث عن أقرب مركز تبرع بالدم في مدينتك",
+          motivationTitle: "لماذا يجب أن أتبرع بالدم؟",
+          motivation1: "كل ثانيتين...",
+          motivation1Text: "هناك شخص في مكان ما يحتاج إلى نقل دم",
+          motivation2: "تبرع واحد...",
+          motivation2Text: "يمكن أن ينقذ حياة 3 أشخاص",
+          motivation3: "لا يوجد بديل...",
+          motivation3Text: "لا يوجد بديل صناعي للدم البشري",
+          pointsTitle: "نظام النقاط العالمي",
+          pointsDesc: "كل تبرع بالدم يسجل كنقطة في سجل المنظمة العالمية للصحة:",
+          point1: "كل تبرع = 1 نقطة تنقذ حياة",
+          point2: "النقاط تصل للمناطق المحتاجة حول العالم",
+          point3: "المتبرعون الدائمون يحصلون على شهادات تقدير",
+          thanksTitle: "شكراً لك!",
+          thanksText1: "شكراً لكل من ساهم في هذه الحملة الإنسانية",
+          thanksText2: "تبرعك اليوم قد يكون سبباً في إنقاذ حياة غداً",
+          shareBtn: "شارك الحملة مع أصدقائك",
+        },
+        en: {
+          title: "Life Vein",
+          subtitle: "Be Strong and Save Others",
+          donateBtn: "Donate Now",
+          slogan: "Be a Hero, Save a Life",
+          introText:
+            "The 'Life Vein' campaign is a humanitarian initiative aimed at encouraging blood donation to save the lives of those in need. Every drop of blood can be a reason to save a human life. Join us in this humanitarian mission and help make a difference.",
+          benefitsTitle: "Benefits of Participating",
+          benefit1: "Saving Lives",
+          benefit1Text: "Each blood donation can save at least 3 lives",
+          benefit2: "Free Health Check",
+          benefit2Text:
+            "You get a free check for blood pressure, hemoglobin, etc.",
+          benefit3: "Psychological Happiness",
+          benefit3Text:
+            "Helping to save others' lives gives you an invaluable feeling",
+          targetTitle: "Target Groups",
+          donorsTitle: "Blood Donors",
+          receiversTitle: "Blood Recipients",
+          req1: "Be in good health",
+          req2: "Age between 18 to 38 years",
+          req3: "Weight not less than 50 kg",
+          req4: "No infectious diseases",
+          req5: "Not taking affecting medications",
+          need1: "Chronic anemia patients",
+          need2: "Accident and surgery victims",
+          need3: "Cancer patients",
+          need4: "War zone residents",
+          need5: "Natural disaster victims",
+          showDonors: "Show Donors",
+          showReceivers: "Show Recipients",
+          videoTitle: "How to Donate Blood",
+          videoDesc:
+            "Watch this instructional video to learn how to donate blood easily and safely",
+          celebsTitle: "Celebrities Who Donate Blood",
+          celebsDesc: "Join these stars and help save lives",
+          celeb1: "Mohamed Salah",
+          celeb1Desc: '"Blood donation is a humanitarian duty"',
+          celeb2: "Yasmin Sabri",
+          celeb2Desc: '"I\'ve been donating blood regularly for 5 years"',
+          celeb3: "Ahmed Helmy",
+          celeb3Desc: '"We\'re all responsible for each other"',
+          howToTitle: "How to Donate Blood",
+          howToDesc: "Simple steps to become a hero and save lives",
+          step1: "Find the nearest center",
+          step1Desc: "Use our map to locate the closest donation center",
+          step2: "Schedule an appointment",
+          step2Desc: "You can book in advance or walk in directly",
+          step3: "Medical checkup",
+          step3Desc: "You'll be examined to ensure eligibility",
+          step4: "Blood donation",
+          step4Desc: "The donation process takes only 10-15 minutes",
+          step5: "Rest and refreshments",
+          step5Desc: "Get some rest and a light snack",
+          locationsTitle: "Donation Centers",
+          locationsDesc: "Find the nearest blood donation center in your city",
+          motivationTitle: "Why Should I Donate Blood?",
+          motivation1: "Every 2 seconds...",
+          motivation1Text: "Someone somewhere needs a blood transfusion",
+          motivation2: "One donation...",
+          motivation2Text: "Can save up to 3 lives",
+          motivation3: "No substitute...",
+          motivation3Text: "There's no artificial alternative to human blood",
+          pointsTitle: "Global Points System",
+          pointsDesc: "Each blood donation counts as a point in WHO's records:",
+          point1: "Each donation = 1 life-saving point",
+          point2: "Points reach needy areas worldwide",
+          point3: "Regular donors receive appreciation certificates",
+          thanksTitle: "Thank You!",
+          thanksText1:
+            "Thanks to everyone who contributed to this humanitarian campaign",
+          thanksText2: "Your donation today may save a life tomorrow",
+          shareBtn: "Share the Campaign",
+        },
+        fr: {
+          title: "Life Vein",
+          subtitle: "Soyez fort et sauvez les autres",
+          donateBtn: "Faire un don maintenant",
+          slogan: "Soyez un héros, sauvez une vie",
+          introText:
+            "La campagne 'Life Vein' est une initiative humanitaire visant à encourager le don de sang pour sauver des vies. Chaque goutte de sang peut être une raison de sauver une vie humaine. Rejoignez-nous dans cette mission humanitaire et aidez à faire la différence.",
+          benefitsTitle: "Avantages de participer",
+          benefit1: "Sauver des vies",
+          benefit1Text: "Chaque don de sang peut sauver au moins 3 vies",
+          benefit2: "Bilan de santé gratuit",
+          benefit2Text:
+            "Vous obtenez un contrôle gratuit de la pression artérielle, de l'hémoglobine, etc.",
+          benefit3: "Bonheur psychologique",
+          benefit3Text:
+            "Aider à sauver des vies vous donne un sentiment inestimable",
+          targetTitle: "Groupes cibles",
+          donorsTitle: "Donneurs de sang",
+          receiversTitle: "Bénéficiaires de sang",
+          req1: "Être en bonne santé",
+          req2: "Âge entre 18 et 38 ans",
+          req3: "Poids pas moins de 50 kg",
+          req4: "Pas de maladies infectieuses",
+          req5: "Ne pas prendre de médicaments affectant",
+          need1: "Patients anémiques chroniques",
+          need2: "Victimes d'accidents et de chirurgies",
+          need3: "Patients cancéreux",
+          need4: "Résidents des zones de guerre",
+          need5: "Victimes de catastrophes naturelles",
+          showDonors: "Afficher les donneurs",
+          showReceivers: "Afficher les bénéficiaires",
+          videoTitle: "Comment donner du sang",
+          videoDesc:
+            "Regardez cette vidéo pour apprendre à donner du sang facilement et en toute sécurité",
+          celebsTitle: "Célébrités qui donnent du sang",
+          celebsDesc: "Rejoignez ces stars et aidez à sauver des vies",
+          celeb1: "Mohamed Salah",
+          celeb1Desc: '"Le don de sang est un devoir humanitaire"',
+          celeb2: "Yasmin Sabri",
+          celeb2Desc: '"Je donne du sang régulièrement depuis 5 ans"',
+          celeb3: "Ahmed Helmy",
+          celeb3Desc: '"Nous sommes tous responsables les uns des autres"',
+          howToTitle: "Comment donner du sang",
+          howToDesc:
+            "Des étapes simples pour devenir un héros et sauver des vies",
+          step1: "Trouver le centre le plus proche",
+          step1Desc:
+            "Utilisez notre carte pour localiser le centre de don le plus proche",
+          step2: "Prendre rendez-vous",
+          step2Desc:
+            "Vous pouvez réserver à l'avance ou vous présenter directement",
+          step3: "Examen médical",
+          step3Desc: "Vous serez examiné pour vérifier votre éligibilité",
+          step4: "Don de sang",
+          step4Desc: "Le processus de don ne prend que 10-15 minutes",
+          step5: "Repos et collation",
+          step5Desc: "Reposez-vous et prenez une collation légère",
+          locationsTitle: "Centres de don",
+          locationsDesc:
+            "Trouvez le centre de don de sang le plus proche dans votre ville",
+          motivationTitle: "Pourquoi donner du sang?",
+          motivation1: "Toutes les 2 secondes...",
+          motivation1Text:
+            "Quelqu'un quelque part a besoin d'une transfusion sanguine",
+          motivation2: "Un don...",
+          motivation2Text: "Peut sauver jusqu'à 3 vies",
+          motivation3: "Aucun substitut...",
+          motivation3Text:
+            "Il n'y a pas d'alternative artificielle au sang humain",
+          pointsTitle: "Système de points mondial",
+          pointsDesc:
+            "Chaque don de sang compte comme un point dans les registres de l'OMS:",
+          point1: "Chaque don = 1 point de sauvetage",
+          point2: "Les points atteignent les zones nécessiteuses dans le monde",
+          point3:
+            "Les donneurs réguliers reçoivent des certificats d'appréciation",
+          thanksTitle: "Merci!",
+          thanksText1:
+            "Merci à tous ceux qui ont contribué à cette campagne humanitaire",
+          thanksText2: "Votre don aujourd'hui peut sauver une vie demain",
+          shareBtn: "Partager la campagne",
+        },
+        es: {
+          title: "Life Vein",
+          subtitle: "Sé fuerte y salva a otros",
+          donateBtn: "Donar ahora",
+          slogan: "Sé un héroe, salva una vida",
+          introText:
+            "La campaña 'Life Vein' es una iniciativa humanitaria que tiene como objetivo fomentar la donación de sangre para salvar vidas. Cada gota de sangre puede ser una razón para salvar una vida humana. Únase a nosotros en esta misión humanitaria y ayude a marcar la diferencia.",
+          benefitsTitle: "Beneficios de participar",
+          benefit1: "Salvar vidas",
+          benefit1Text: "Cada donación de sangre puede salvar al menos 3 vidas",
+          benefit2: "Chequeo de salud gratuito",
+          benefit2Text:
+            "Obtienes un control gratuito de presión arterial, hemoglobina, etc.",
+          benefit3: "Felicidad psicológica",
+          benefit3Text: "Ayudar a salvar vidas te da un sentimiento invaluable",
+          targetTitle: "Grupos objetivo",
+          donorsTitle: "Donantes de sangre",
+          receiversTitle: "Receptores de sangre",
+          req1: "Estar en buena salud",
+          req2: "Edad entre 18 y 38 años",
+          req3: "Peso no menos de 50 kg",
+          req4: "Sin enfermedades infecciosas",
+          req5: "No tomar medicamentos que afecten",
+          need1: "Pacientes con anemia crónica",
+          need2: "Víctimas de accidentes y cirugías",
+          need3: "Pacientes con cáncer",
+          need4: "Residentes de zonas de guerra",
+          need5: "Víctimas de desastres naturales",
+          showDonors: "Mostrar donantes",
+          showReceivers: "Mostrar receptores",
+          videoTitle: "Cómo donar sangre",
+          videoDesc:
+            "Mira este video instructivo para aprender a donar sangre fácil y seguro",
+          celebsTitle: "Celebridades que donan sangre",
+          celebsDesc: "Únete a estas estrellas y ayuda a salvar vidas",
+          celeb1: "Mohamed Salah",
+          celeb1Desc: '"La donación de sangre es un deber humanitario"',
+          celeb2: "Yasmin Sabri",
+          celeb2Desc: '"He estado donando sangre regularmente durante 5 años"',
+          celeb3: "Ahmed Helmy",
+          celeb3Desc: '"Todos somos responsables el uno del otro"',
+          howToTitle: "Cómo donar sangre",
+          howToDesc: "Pasos simples para convertirte en héroe y salvar vidas",
+          step1: "Encuentra el centro más cercano",
+          step1Desc:
+            "Usa nuestro mapa para ubicar el centro de donación más cercano",
+          step2: "Programa una cita",
+          step2Desc:
+            "Puedes reservar con anticipación o presentarte directamente",
+          step3: "Examen médico",
+          step3Desc: "Serás examinado para asegurar tu elegibilidad",
+          step4: "Donación de sangre",
+          step4Desc: "El proceso de donación toma solo 10-15 minutos",
+          step5: "Descanso y refrigerio",
+          step5Desc: "Descansa y toma un refrigerio ligero",
+          locationsTitle: "Centros de donación",
+          locationsDesc:
+            "Encuentra el centro de donación de sangre más cercano en tu ciudad",
+          motivationTitle: "¿Por qué debería donar sangre?",
+          motivation1: "Cada 2 segundos...",
+          motivation1Text:
+            "Alguien en algún lugar necesita una transfusión de sangre",
+          motivation2: "Una donación...",
+          motivation2Text: "Puede salvar hasta 3 vidas",
+          motivation3: "No hay sustituto...",
+          motivation3Text:
+            "No hay alternativa artificial para la sangre humana",
+          pointsTitle: "Sistema global de puntos",
+          pointsDesc:
+            "Cada donación de sangre cuenta como un punto en los registros de la OMS:",
+          point1: "Cada donación = 1 punto que salva vidas",
+          point2: "Los puntos llegan a áreas necesitadas en todo el mundo",
+          point3: "Los donantes regulares reciben certificados de aprecio",
+          thanksTitle: "¡Gracias!",
+          thanksText1:
+            "Gracias a todos los que contribuyeron a esta campaña humanitaria",
+          thanksText2: "Tu donación hoy puede salvar una vida mañana",
+          shareBtn: "Compartir la campaña",
+        },
+        de: {
+          title: "Life Vein",
+          subtitle: "Sei stark und rette andere",
+          donateBtn: "Jetzt spenden",
+          slogan: "Sei ein Held, rette ein Leben",
+          introText:
+            "Die 'Life Vein'-Kampagne ist eine humanitäre Initiative, die darauf abzielt, die Blutspende zu fördern, um Leben zu retten. Jeder Blutstropfen kann ein Grund sein, ein menschliches Leben zu retten. Schließen Sie sich uns in dieser humanitären Mission an und helfen Sie mit, einen Unterschied zu machen.",
+          benefitsTitle: "Vorteile der Teilnahme",
+          benefit1: "Leben retten",
+          benefit1Text: "Jede Blutspende kann mindestens 3 Leben retten",
+          benefit2: "Kostenloser Gesundheitscheck",
+          benefit2Text:
+            "Sie erhalten eine kostenlose Untersuchung von Blutdruck, Hämoglobin usw.",
+          benefit3: "Psychologisches Glück",
+          benefit3Text:
+            "Hilfe beim Retten von Leben gibt Ihnen ein unschätzbares Gefühl",
+          targetTitle: "Zielgruppen",
+          donorsTitle: "Blutspender",
+          receiversTitle: "Blutempfänger",
+          req1: "In guter Gesundheit sein",
+          req2: "Alter zwischen 18 und 38 Jahren",
+          req3: "Gewicht nicht weniger als 50 kg",
+          req4: "Keine ansteckenden Krankheiten",
+          req5: "Keine beeinflussenden Medikamente einnehmen",
+          need1: "Chronische Anämiepatienten",
+          need2: "Unfall- und Operationsopfer",
+          need3: "Krebspatienten",
+          need4: "Bewohner von Kriegsgebieten",
+          need5: "Opfer von Naturkatastrophen",
+          showDonors: "Spender anzeigen",
+          showReceivers: "Empfänger anzeigen",
+          videoTitle: "Wie man Blut spendet",
+          videoDesc:
+            "Sehen Sie sich dieses Anleitungsvideo an, um zu erfahren, wie Sie einfach und sicher Blut spenden können",
+          celebsTitle: "Prominente, die Blut spenden",
+          celebsDesc:
+            "Schließen Sie sich diesen Stars an und helfen Sie, Leben zu retten",
+          celeb1: "Mohamed Salah",
+          celeb1Desc: '"Blutspende ist eine humanitäre Pflicht"',
+          celeb2: "Yasmin Sabri",
+          celeb2Desc: '"Ich spende seit 5 Jahren regelmäßig Blut"',
+          celeb3: "Ahmed Helmy",
+          celeb3Desc: '"Wir sind alle füreinander verantwortlich"',
+          howToTitle: "Wie man Blut spendet",
+          howToDesc:
+            "Einfache Schritte, um ein Held zu werden und Leben zu retten",
+          step1: "Finden Sie das nächste Zentrum",
+          step1Desc:
+            "Verwenden Sie unsere Karte, um das nächste Spendezentrum zu finden",
+          step2: "Termin vereinbaren",
+          step2Desc: "Sie können im Voraus buchen oder direkt vorbeikommen",
+          step3: "Medizinische Untersuchung",
+          step3Desc: "Sie werden untersucht, um Ihre Eignung zu überprüfen",
+          step4: "Blutspende",
+          step4Desc: "Der Spendevorgang dauert nur 10-15 Minuten",
+          step5: "Ruhe und Erfrischung",
+          step5Desc: "Gönnen Sie sich etwas Ruhe und einen leichten Snack",
+          locationsTitle: "Spendezentren",
+          locationsDesc:
+            "Finden Sie das nächste Blutspendezentrum in Ihrer Stadt",
+          motivationTitle: "Warum sollte ich Blut spenden?",
+          motivation1: "Alle 2 Sekunden...",
+          motivation1Text: "Benötigt jemand irgendwo eine Bluttransfusion",
+          motivation2: "Eine Spende...",
+          motivation2Text: "Kann bis zu 3 Leben retten",
+          motivation3: "Kein Ersatz...",
+          motivation3Text:
+            "Es gibt keine künstliche Alternative zu menschlichem Blut",
+          pointsTitle: "Globales Punktesystem",
+          pointsDesc:
+            "Jede Blutspende zählt als Punkt in den Aufzeichnungen der WHO:",
+          point1: "Jede Spende = 1 lebensrettender Punkt",
+          point2: "Punkte erreichen bedürftige Gebiete weltweit",
+          point3: "Regelmäßige Spender erhalten Anerkennungszertifikate",
+          thanksTitle: "Danke!",
+          thanksText1:
+            "Danke an alle, die zu dieser humanitären Kampagne beigetragen haben",
+          thanksText2: "Ihre Spende heute kann morgen ein Leben retten",
+          shareBtn: "Kampagne teilen",
+        },
+        zh: {
+          title: "生命之脉",
+          subtitle: "变得坚强，拯救他人",
+          donateBtn: "立即捐赠",
+          slogan: "成为英雄，拯救生命",
+          introText:
+            "'生命之脉'运动是一项人道主义倡议，旨在鼓励献血以拯救生命。每一滴血都可能是拯救一个人生命的原因。加入我们的人道主义使命，帮助改变世界。",
+          benefitsTitle: "参与的好处",
+          benefit1: "拯救生命",
+          benefit1Text: "每次献血可以拯救至少3条生命",
+          benefit2: "免费健康检查",
+          benefit2Text: "您可以免费检查血压、血红蛋白等",
+          benefit3: "心理幸福",
+          benefit3Text: "帮助拯救生命给您带来无价的感受",
+          targetTitle: "目标群体",
+          donorsTitle: "献血者",
+          receiversTitle: "血液接受者",
+          req1: "身体健康",
+          req2: "年龄在18至38岁之间",
+          req3: "体重不低于50公斤",
+          req4: "无传染性疾病",
+          req5: "未服用影响药物",
+          need1: "慢性贫血患者",
+          need2: "事故和手术受害者",
+          need3: "癌症患者",
+          need4: "战争地区居民",
+          need5: "自然灾害受害者",
+          showDonors: "显示献血者",
+          showReceivers: "显示接受者",
+          videoTitle: "如何献血",
+          videoDesc: "观看本教学视频，了解如何轻松安全地献血",
+          celebsTitle: "献血的明星",
+          celebsDesc: "加入这些明星，帮助拯救生命",
+          celeb1: "穆罕默德·萨拉赫",
+          celeb1Desc: '"献血是人道主义责任"',
+          celeb2: "亚斯敏·萨布里",
+          celeb2Desc: '"我定期献血已有5年"',
+          celeb3: "艾哈迈德·赫尔米",
+          celeb3Desc: '"我们都对彼此负责"',
+          howToTitle: "如何献血",
+          howToDesc: "成为英雄并拯救生命的简单步骤",
+          step1: "找到最近的中心",
+          step1Desc: "使用我们的地图定位最近的献血中心",
+          step2: "安排预约",
+          step2Desc: "您可以提前预订或直接前往",
+          step3: "医疗检查",
+          step3Desc: "您将接受检查以确保资格",
+          step4: "献血",
+          step4Desc: "献血过程仅需10-15分钟",
+          step5: "休息和点心",
+          step5Desc: "休息一下并享用清淡小吃",
+          locationsTitle: "献血中心",
+          locationsDesc: "在您的城市找到最近的献血中心",
+          motivationTitle: "为什么我应该献血？",
+          motivation1: "每2秒钟...",
+          motivation1Text: "某处有人需要输血",
+          motivation2: "一次献血...",
+          motivation2Text: "可以拯救多达3条生命",
+          motivation3: "没有替代品...",
+          motivation3Text: "没有人工替代品可以代替人类血液",
+          pointsTitle: "全球积分系统",
+          pointsDesc: "每次献血都计入世界卫生组织的记录:",
+          point1: "每次献血=1个拯救生命的积分",
+          point2: "积分到达全球需要帮助的地区",
+          point3: "定期献血者获得感谢证书",
+          thanksTitle: "谢谢！",
+          thanksText1: "感谢所有为这项人道主义运动做出贡献的人",
+          thanksText2: "您今天的捐赠可能会在明天拯救一条生命",
+          shareBtn: "分享运动",
+        },
+      };
+
+      // تغيير اللغة
+      function changeLanguage(lang) {
+        // تحديث اتجاه الصفحة
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        document.documentElement.lang = lang;
+
+        // تحديث النشط في أزرار اللغة
+        document.querySelectorAll(".language-btn").forEach((btn) => {
+          btn.classList.remove("active");
+          if (btn.getAttribute("onclick").includes(lang)) {
+            btn.classList.add("active");
+          }
+        });
+
+        // تحديث كل العناصر التي تحتوي على بيانات الترجمة
+        document.querySelectorAll("[data-translate]").forEach((element) => {
+          const key = element.getAttribute("data-translate");
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+      }
+
+      // تبديل معرض الصور
+      function toggleGallery(type) {
+        const gallery = document.getElementById(`${type}-gallery`);
+        if (gallery.style.display === "flex") {
+          gallery.style.display = "none";
+        } else {
+          gallery.style.display = "flex";
+        }
+      }
+
+      // تعيين اللغة الافتراضية عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", function () {
+        changeLanguage("ar");
+
+        // إضافة event listeners لأزرار اللغة
+        document.querySelectorAll(".language-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const lang = this.getAttribute("onclick").match(/'([^']+)'/)[1];
+            changeLanguage(lang);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
